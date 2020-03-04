@@ -1,6 +1,6 @@
 <?php
 
-namespace abdualiym\slider\helpers;
+namespace abdualiym\language;
 
 
 class Language
