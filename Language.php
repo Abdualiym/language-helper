@@ -11,7 +11,7 @@ class Language
         return $object[$attributeName . '_' . \Yii::$app->params['cms']['languageIds'][\Yii::$app->language]];
     }
 
-    public static function getPhotoUrl($object): string
+    public static function getPhotoUrl($object, $thumbProfile = null): string
     {
         $key = \Yii::$app->params['cms']['languageIds'][\Yii::$app->language];
 
@@ -19,18 +19,7 @@ class Language
             $key = 0;
         }
 
-        return $object->getImageFileUrl('photo_' . $key);
-    }
-
-    public static function getThumbUrl($object, $thumbProfile): string
-    {
-        $key = \Yii::$app->params['cms']['languageIds'][\Yii::$app->language];
-
-        if (!$object['photo_' . $key]) {
-            $key = 0;
-        }
-
-        return $object->getThumbFileUrl('photo_' . $key, $thumbProfile);
+        return $thumbProfile ? $object->getThumbFileUrl('photo_' . $key, $thumbProfile) : $object->getImageFileUrl('photo_' . $key);
     }
 
     // backend

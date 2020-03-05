@@ -19,7 +19,7 @@ abdualiym\language\Language::getPhotoUrl($object);
 
 get thumb url:
 ```php
-abdualiym\language\Language::getThumbUrl($object, 'key');
+abdualiym\language\Language::getPhotoUrl($object, 'key');
 ```
 
 get attribute value by app language:
