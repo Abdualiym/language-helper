@@ -8,7 +8,7 @@ class Language
     // frontend
     public static function get($object, $attribute)
     {
-        return $object[$attributeName . '_' . \Yii::$app->params['cms']['languageIds'][\Yii::$app->language]];
+        return $object[$attribute . '_' . \Yii::$app->params['cms']['languageIds'][\Yii::$app->language]];
     }
 
     public static function getPhotoUrl($object): string
@@ -34,14 +34,14 @@ class Language
     }
 
     // backend
-    public static function getAttribute($object, $attributeName, $key = null)
+    public static function getAttribute($object, $attribute, $key = null)
     {
         $key = isset($key) ? $key : \Yii::$app->language;
 
         if (is_string($key)) {
             $key = \Yii::$app->params['cms']['languageIds'][$key];
         }
-        return $object[$attributeName . '_' . $key];
+        return $object[$attribute . '_' . $key];
     }
 
     public static function dataKeys()
