@@ -12,9 +12,6 @@
   "homepage": "https://www.github.com/",
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
-  "require": {
-    "jeremeamia/superclosure": "^2.0"
-  },
   "authors": [
     {
       "name": "Olimjon Aripdjanov",
