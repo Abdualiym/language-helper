@@ -1,6 +1,6 @@
 <?php
 
-namespace abdualiym\slider\helpers;
+namespace abdualiym\language;
 
 
 class Language
@@ -11,7 +11,7 @@ class Language
         return $object[$attributeName . '_' . \Yii::$app->params['cms']['languageIds'][\Yii::$app->language]];
     }
 
-    public static function getImageUrl($object): string
+    public static function getPhotoUrl($object): string
     {
         $key = \Yii::$app->params['cms']['languageIds'][\Yii::$app->language];
 
@@ -20,6 +20,17 @@ class Language
         }
 
         return $object->getImageFileUrl('photo_' . $key);
+    }
+
+    public static function getThumbUrl($object, $thumbProfile): string
+    {
+        $key = \Yii::$app->params['cms']['languageIds'][\Yii::$app->language];
+
+        if (!$object['photo_' . $key]) {
+            $key = 0;
+        }
+
+        return $object->getThumbFileUrl('photo_' . $key, $thumbProfile);
     }
 
     // backend
