@@ -14,12 +14,7 @@ composer require abdualiym/yii2-language "^1.0"
 
 get photo url:
 ```php
-abdualiym\language\Language::getPhotoUrl($object);
-```
-
-get thumb url:
-```php
-abdualiym\language\Language::getThumbUrl($object, 'key');
+abdualiym\language\Language::getPhotoUrl($object, 'profile');
 ```
 
 get attribute value by app language:
